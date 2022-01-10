@@ -39,6 +39,13 @@ public class OffertenRepository {
             OffertenList.add(offerten);
         }
     }
+    public void sort(String file, String delimitator) throws IOException
+    {
+        List<Offerten> offertenList = readFromFile("offerten.txt");
+        List<Offerten> sortedList = offertenList.stream()
+                .sorted(Offerten::compareTo).toList();
+    }
+
 
 
 }
